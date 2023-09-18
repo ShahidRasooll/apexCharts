@@ -27,6 +27,18 @@ const ApexHorizontalBarChart = () => {
             height: 350,
             stacked: true,
         },
+        responsive: [
+            {
+                breakpoint: 480,
+                options: {
+                    legend: {
+                        position: 'bottom',
+                        offsetX: -10,
+                        offsetY: 0,
+                    },
+                },
+            },
+        ],
         plotOptions: {
             bar: {
                 horizontal: true,
@@ -34,7 +46,7 @@ const ApexHorizontalBarChart = () => {
                 dataLabels: {
                     total: {
                         enabled: false,
-                        offsetX: 0,
+                        offsetX: 0, //remove
                         style: {
                             fontSize: '13px',
                             fontWeight: 900,
@@ -44,7 +56,7 @@ const ApexHorizontalBarChart = () => {
             },
         },
         stroke: {
-            width: 1,
+            width: 0,
             colors: ['#fff'],
         },
 
