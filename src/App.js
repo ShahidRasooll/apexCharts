@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import ApexChart from "./component/ApexChart";
 import ApexHorizontalBarChart from "./component/ApexHorizontalBarChart";
+import TransactionHistoryGraph from "./component/TransactionHistoryGraph";
 
 const App = () => {
 
@@ -20,6 +21,12 @@ const App = () => {
                         <h1 style={{ marginLeft: "20px" }}>Workload per user</h1>
                         <ApexHorizontalBarChart />
                     </div>
+                </div>
+            </div>
+            <div className="row" style={{ marginRight: "20px" }}>
+                <div className="mixed-chart">
+                    <h1 style={{ marginLeft: "20px" }}>Workload per user</h1>
+                    <TransactionHistoryGraph/>
                 </div>
             </div>
 

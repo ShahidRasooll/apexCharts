@@ -26,6 +26,7 @@ const ApexHorizontalBarChart = () => {
             type: 'bar',
             height: 350,
             stacked: true,
+            // background: '#7D7D7D',
         },
         responsive: [
             {
