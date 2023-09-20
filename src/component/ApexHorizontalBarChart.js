@@ -45,15 +45,30 @@ const ApexHorizontalBarChart = () => {
                 horizontal: true,
                 borderRadius: 4,
                 dataLabels: {
-                    total: {
-                        enabled: false,
-                        offsetX: 0, //remove
-                        style: {
-                            fontSize: '13px',
-                            fontWeight: 900,
-                        },
+
+                    style: {
+                        fontSize: '50px',
+                        fontWeight: 'bold',
+                    },
+                    background: {
+                        enabled: true,
+                        foreColor: '#fff',
+                        borderRadius: 2,
+                        padding: 4,
+                        opacity: 0.9,
+                        borderWidth: 1,
+                        borderColor: '#fff'
                     },
                 },
+            },
+
+
+        },
+        hover: {
+            // Customize the hover color here
+            fill: {
+                type: 'solid',
+                color: '#FF5733', // Change to your desired hover color
             },
         },
         stroke: {
@@ -69,7 +84,8 @@ const ApexHorizontalBarChart = () => {
 
                 },
                 style: {
-                    fontSize: 13, // Adjust the font size for category labels
+                    fontSize: '10px',
+                    // fontWeight: 900,
                 },
             },
         },
@@ -92,8 +108,10 @@ const ApexHorizontalBarChart = () => {
     };
 
     return (
-        <div id="chart">
+        <div id="chart" className="horizontalBarChart">
+            <h1 id='apex'>apexChart</h1>
             <ReactApexChart options={chartOptions} series={seriesData} type="bar" height={350} width={653} />
+
         </div>
     );
 };

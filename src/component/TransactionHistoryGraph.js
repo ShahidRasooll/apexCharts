@@ -94,7 +94,7 @@ const TransactionHistoryGraph = () => {
                 bar: {
                     borderRadius: 2,
                     horizontal: false,
-                    columnWidth:'80%',
+                    columnWidth:'10px',
                     endingShape: 'rounded',
                     // barWidth: '480%',
                 },
@@ -104,7 +104,7 @@ const TransactionHistoryGraph = () => {
             },
             stroke: {
                 show: true,
-                width: 2,
+                width: 1,
                 colors: ['transparent'],
             },
             xaxis: {
@@ -120,8 +120,14 @@ const TransactionHistoryGraph = () => {
                         const day = date.getDate();
                         const hour = date.getHours();
                         const amPm = hour < 12 ? 'AM' : 'PM';
-                        const formattedHour = hour % 12 === 0 ? 12 : hour % 12;
-                        return `${monthName} ${day}, ${formattedHour} ${amPm}`;
+
+                        if (hour === 12) {
+                            return `${monthName} ${day}, 12 ${amPm}`;
+                        } else if (hour === 0) {
+                            return `${monthName} ${day + 1}, 12 AM`;
+                        } else {
+                            return `${monthName} ${day}, ${hour} ${amPm}`;
+                        }
                     },
                 },
                 min: new Date('2022-11-04T00:00:00').getTime(), // Start date: Nov 4, 12 AM

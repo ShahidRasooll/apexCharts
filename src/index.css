@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#apex{
+  color: red;
+}
+.apexcharts-bar-series:hover {
+  fill: #ff0000;
+}
+/*.apexcharts-bar-area:hover {*/
+/*  fill: #FF0099;*/
+/*!*}*!*/
+.horizontalBarChart .apexcharts-bar-area:hover {
+  fill: #FF6F61;/* Change the color to yellow */
+  fill-opacity: 0.9;
+}
+
+
+
+
+
