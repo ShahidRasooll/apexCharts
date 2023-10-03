@@ -79,7 +79,7 @@ const ApexHorizontalBarChart = () => {
         xaxis: {
             categories: ['Ray Lapid', 'Maria Santos', 'Elena Navarro', 'Teresa Gomez', 'Sofia Reyes'],
             labels: {
-                formatter: function (val) {
+                formatter: function () {
                     return '';
 
                 },
