@@ -9,6 +9,7 @@ const NetworkGraph = ({ data, width, height }) => {
 
         const svg = d3.select(svgRef.current);
 
+
         const nodes = data.nodes;
         const links = data.links;
 
@@ -38,7 +39,7 @@ const NetworkGraph = ({ data, width, height }) => {
             .append('rect')
             .attr('class', 'label-background')
             .attr('x', -20)
-            .attr('y', -15)
+            .attr('y', -10)
             .attr('width', 30)
             .attr('height', 20)
             .attr('fill', 'white');
@@ -106,28 +107,39 @@ const NetworkGraph = ({ data, width, height }) => {
 
                 const fontSize = Math.min(12, (40 / textWidth) * 12);
                 d3.select(this).style('font-size', `${fontSize}px`);
-            });
+            }
+            );
 
         simulation.on('tick', () => {
             link
+                .transition() // Apply a transition
+                .duration(80) // Set the duration of the transition in milliseconds
                 .attr('x1', (d) => d.source.x)
                 .attr('y1', (d) => d.source.y)
                 .attr('x2', (d) => d.target.x)
                 .attr('y2', (d) => d.target.y);
 
             linkLabels
+                .transition()
+                .duration(80)
                 .attr('x', (d) => (d.source.x + d.target.x) / 2)
                 .attr('y', (d) => (d.source.y + d.target.y) / 2);
 
             node
+                .transition()
+                .duration(80)
                 .attr('cx', (d) => d.x)
                 .attr('cy', (d) => d.y)
                 .attr('r', 8);
 
             nodeLabels
+                .transition()
+                .duration(80)
                 .attr('transform', (d) => `translate(${d.x},${d.y})`);
 
             linkLabels
+                .transition()
+                .duration(80)
                 .attr('transform', (d) => `translate(${(d.source.x + d.target.x) / 2},${(d.source.y + d.target.y) / 2})`);
         });
     }, [data, width, height]);
